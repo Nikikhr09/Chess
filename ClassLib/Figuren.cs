@@ -32,6 +32,7 @@ public class Bishop : Figure
    public Bishop(bool isWhite) : base(isWhite)
    {
    }
+}
 public class Queen : Figure
 {
    public Queen(bool isWhite) : base(isWhite)
@@ -43,5 +44,4 @@ public class King : Figure
    public King(bool isWhite) : base(isWhite)
    {
    }
-}
 }
