@@ -48,6 +48,18 @@ public class Chessboard
         _board[4,7] = new King(false);
 
     }
+    public bool movingFigure(int fromX, int fromY, int toX, int toY)
+    {
+        if(fromX < 0 || fromX > 7 || fromY < 0 || fromY > 7){return false;}
+        if(toX < 0 || toX > 7 || toY < 0 || toY > 7){return false;}
+
+        Figure movingFigure = _board[fromX, fromY];
+        if(movingFigure == null)
+        {
+            return false;
+        }
+        return true;
+    }
 }
 
 
