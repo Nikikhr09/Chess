@@ -152,11 +152,18 @@ public class Figures
    
     }
     [Fact]
-    public void WithOutFigureNoTurn()
-    {
-        var board = new Chessboard();
-        var result = board.movingFigure(0,1,0,3);
-    }
+
+public void MoveFigure_WithFigure_ShouldReturnTrue()
+{
+    var board = new Chessboard();
+    var pawn = new Pawn(true);
+
+    board.SetFigure(0,1, pawn);
+
+    var result = board.movingFigure(0,1,0,3);
+
+    Assert.True(result);
+}
 }
 
     

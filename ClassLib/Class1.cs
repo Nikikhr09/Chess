@@ -1,4 +1,6 @@
-﻿namespace ClassLib;
+﻿using System.Security.Cryptography.X509Certificates;
+
+namespace ClassLib;
 
 public class Chessboard
 {
@@ -47,6 +49,12 @@ public class Chessboard
         _board[4,0] = new King(true);
         _board[4,7] = new King(false);
 
+        for (int x = 0; x < 8; x++)
+{
+        _board[x, 1] = new Pawn(true);   
+        _board[x, 6] = new Pawn(false);  
+}
+
     }
     public bool movingFigure(int fromX, int fromY, int toX, int toY)
     {
@@ -67,6 +75,45 @@ public class Chessboard
             return false;
         }
     }
+public override string ToString()
+{
+    string result = "";
+
+    for (int y = 0; y < 8; y++)
+    {
+        result += "+-+-+-+-+-+-+-+-+\n";
+
+        for (int x = 0; x < 8; x++)
+        {
+            result += "|";
+             if (_board[x, y] != null)
+         {
+             result += _board[x, y].ToString();
+        }
+            else
+        {
+             if ((x + y) % 2 == 0)
+            result += " ";
+             else
+            result += "#";
+    }
+
+           
+        }
+
+        result += "|\n";
+    }
+
+    result += "+-+-+-+-+-+-+-+-+";
+
+    return result;
+   
+{
+    
 }
+}
+
+    }
+
 
 
