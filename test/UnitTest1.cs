@@ -1,5 +1,8 @@
 ﻿namespace test;
+
+using System.Reflection.Metadata;
 using ClassLib;
+using Microsoft.VisualBasic;
 using Xunit;
 public class Figures
 {
@@ -141,4 +144,20 @@ public class Figures
         Assert.IsType<King>(figure);
         Assert.False(figure.IsWhite);
     }
+    [Fact]
+    public void BoardMustNotBeLeft(){
+    var board = new Chessboard();
+    var result = board.movingFigure(7,8,8,8);
+    Assert.False(result);
+   
+    }
+    [Fact]
+    public void WithOutFigureNoTurn()
+    {
+        var board = new Chessboard();
+        var result = board.movingFigure(0,1,0,3);
+    }
 }
+
+    
+    

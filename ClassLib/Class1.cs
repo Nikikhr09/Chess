@@ -59,6 +59,13 @@ public class Chessboard
             return false;
         }
         return true;
+
+       _board[toX, toY] = movingFigure;
+       _board[fromX, fromY] = null;
+        if(movingFigure == null)
+        {
+            return false;
+        }
     }
 }
 
